@@ -9,25 +9,25 @@ Collaborators: NONE
 '''
 
 def mod_expo(b, n, m):
-    x = 1
-    power = b % m
+    x = 1 # init to 1 
+    power = b % m # base mod m
 
-    for i in range(n.bit_length()):  # Loop through bits of n
-        if (n >> i) & 1:  # Check if the i-th bit of n is 1
-            x = (x * power) % m
-        power = (power * power) % m  # Square power mod m
+    for i in range(n.bit_length()):# loops thru bit of n
+        if (n >> i) & 1: #checks the ith bit of n is 1 
+            x = (x * power) % m  # mult by power and mod m
+        power = (power * power) % m # sqaure the power and take mod m
 
-    return x
+    return x #returns result
 
-def main():
+def main(): #reads input from user
     b = int(input("Enter B: "))
     n = int(input("Enter n: "))
     m = int(input("Enter m: "))
 
-    if b <= 0 or n <= 0 or m <= 0:
-        print("Error: All numbers must be positive and nonzero.")
-        return
+    if b <= 0 or n <= 0 or m <= 0: # makes sure all inputs are positive and nonzero
+        print("Error: All numbers must be positive and nonzero.") # prints error if negastive or zero
+        return # stops func
 
-    print(mod_expo(b, n, m))
+    print(mod_expo(b, n, m)) # calls mod_expo to do the math and print the result
 
 main()
