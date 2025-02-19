@@ -1,4 +1,14 @@
-def modular_exponentiation(b, n, m):
+'''
+Name:Nick Heyer 
+KUID:3142337
+LAB Session:Thursday 4:30pm
+LAB Assignment: 04
+Description: This program take in 3 ints to be put into a mod equation and 
+gives the correct output making sure negative and zeros are not counted for
+Collaborators: NONE
+'''
+
+def mod_expo(b, n, m):
     x = 1
     power = b % m
 
@@ -18,6 +28,6 @@ def main():
         print("Error: All numbers must be positive and nonzero.")
         return
 
-    print(modular_exponentiation(b, n, m))
+    print(mod_expo(b, n, m))
 
 main()
